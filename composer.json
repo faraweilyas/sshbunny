@@ -1,0 +1,34 @@
+{
+    "name": "faraweilyas/sshbunny",
+    "type": "library",
+    "description": "PHP library that provides an object-oriented wrapper to connect to SSH and run shell commands with the php ssh2 extension.",
+    "keywords": ["ssh", "ssh connector", "shell", "shell commands"],
+    "homepage": "https://github.com/faraweilyas/sshbunny",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Farawe iLyas",
+            "email": "faraweilyas@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "faraweilyas@gmail.com",
+        "issues": "https://github.com/faraweilyas/sshbunny/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "SSHBunny\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
