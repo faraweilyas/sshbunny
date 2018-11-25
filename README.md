@@ -27,6 +27,7 @@ git clone https://github.com/faraweilyas/sshbunny.git
 -------------
 
 `SSHBunny` constructor takes four parameters and they all have default values `$method='local'`, `$authType=NULL`, `$host=NULL`, `$port=22`, `$username=NULL`
+
  - `$method` can be set to `local` or `remote`, `local` will execute commands on your own shell without internet connection while `remote` executes commands on the remote server that you connect to based on your configuration.
  - `$authType` can be set to `KEY`, `PASSWORD` or `KEY_PASSWORD`, `KEY` and `KEY_PASSWORD` uses [ssh2_auth_pubkey_file](http://php.net/manual/en/function.ssh2-auth-pubkey-file.php) the difference is when you set `$authType='KEY_PASSWORD'` ssh2_auth_pubkey_file takes the last parameter of password which will now be required and `PASSWORD` uses [ssh2_auth_password](http://php.net/manual/en/function.ssh2-auth-password.php).
  - `$port` should be set to your server port if your are connecting to a remote server.
