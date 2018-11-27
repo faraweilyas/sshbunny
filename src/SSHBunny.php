@@ -43,6 +43,26 @@ class SSHBunny extends SSHManager
         return $this;
     }
 
+    public function __toString ()
+    {
+        return $this->getData();
+    }
+    
+    public function getData ($display=FALSE, $html=FALSE)
+    {
+        if ($display == TRUE)
+            print ($html) ? nl2br($this->data) : $this->data;
+        else
+            return ($html) ? nl2br($this->data) : $this->data;
+        return $this;
+    }
+    
+    public function clearData ()
+    {
+        $this->data = "";
+        return $this;
+    }
+
     public function initialize ()
     {
         if ($this->getMethod() == "local")
@@ -123,21 +143,6 @@ class SSHBunny extends SSHManager
             $this->data .= $buffer;
         }
         fclose($stream);
-        return $this;
-    }
-    
-    public function getData ($display=FALSE, $html=FALSE)
-    {
-        if ($display == TRUE)
-            print ($html) ? nl2br($this->data) : $this->data;
-        else
-            return ($html) ? nl2br($this->data) : $this->data;
-        return $this;
-    }
-    
-    public function clearData ()
-    {
-        $this->data = "";
         return $this;
     }
     
