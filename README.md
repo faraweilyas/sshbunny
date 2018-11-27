@@ -90,19 +90,30 @@ $sshBunny = (new SSHBunny('remote', 'KEY', HOST, PORT, USERNAME))
 - Executed command output
 ```php
 // Will return the result of executed command output
-$sshBunny->exec("ls -la")->getData();
+$sshBunny
+    ->exec("ls -la")
+    ->getData();
 // Will display the result of executed command output
-$sshBunny->exec("ls -la")->getData(TRUE);
+$sshBunny
+    ->exec("ls -la")
+    ->getData(TRUE);
 ```
 
 - Clear stored executed command output
 ```php
 // Will clear the first executed command output and return the next executed command output
-$sshBunny->exec("ls -la")->clearData()->exec("whoami")->getData(TRUE);
+$sshBunny
+    ->exec("ls -la")
+    ->clearData()
+    ->exec("whoami")
+    ->getData(TRUE);
 ```
 
 - Disconnect server connection
 ```php
 // Will run the commands provided and display the result then disconnect from the server
-$sshBunny->exec("ls -la", "whoami")->getData(TRUE)->disconnect();
+$sshBunny
+    ->exec("ls -la", "whoami")
+    ->getData(TRUE)
+    ->disconnect();
 ```
